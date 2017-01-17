@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Post from '../components/Post';
 
 export class PostListContainer extends React.Component {
-  
   render() {
     return (
       <div>
