@@ -1,18 +1,14 @@
 import React from 'react';
-import '../styles/App.css';
+import AppContainer from'../containers/AppContainer';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <AppContainer>
         {this.props.children}
-      </div>
+      </AppContainer>
     );
   }
 }
-
-App.propTypes = {
-  children: React.PropTypes.object.isRequired
-};
 
 export default App;
