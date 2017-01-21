@@ -1,7 +1,7 @@
 import React from 'react';
 
 class PostList extends React.Component {
-  renderPost(posts) {
+  renderPosts(posts) {
     return posts.map((post) => {
       return (
         <div key={post.id}>
@@ -18,7 +18,7 @@ class PostList extends React.Component {
     return (
       <div>
         <h1>Post</h1>
-        {this.renderPost(posts)}
+        {this.renderPosts(posts)}
       </div>
     );
   }
