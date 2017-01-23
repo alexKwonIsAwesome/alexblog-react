@@ -10,9 +10,11 @@ class Home extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to Alexblog</h2>
         </div>
-        <p className="App-intro">
-          Simple and lovely blog built with react
-        </p>
+        <div>
+          <p className="App-intro">
+            Simple and lovely blog built with react
+          </p>
+        </div>
         <PostListContainer />
       </div>
    );
