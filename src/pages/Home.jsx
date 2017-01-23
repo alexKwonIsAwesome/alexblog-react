@@ -1,11 +1,13 @@
 import React from 'react';
 import logo from '../logo.svg';
 import PostListContainer from '../containers/PostListContainer';
+import HeaderContainer from '../containers/HeaderContainer';
 
 class Home extends React.Component {
   render() {
     return (
       <div className="App">
+        <HeaderContainer type="home"/>
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to Alexblog</h2>

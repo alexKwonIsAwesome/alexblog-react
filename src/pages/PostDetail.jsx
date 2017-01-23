@@ -7,7 +7,7 @@ class PostDetail extends React.Component {
   render() {
     return (
       <div>
-        <HeaderContainer />
+        <HeaderContainer type="post-detail"/>
         <div className="container-fluid">
           <div className="row">
             <div className="col col-sm-3">
