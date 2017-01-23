@@ -7,6 +7,8 @@ import './index.css';
 import routes from './routes/index';
 import store from './store/configureStore';
 
+import 'bootstrap/dist/css/bootstrap.css'; //https://reactstrap.github.io/
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory} routes={routes} />

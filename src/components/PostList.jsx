@@ -6,7 +6,7 @@ class PostList extends React.Component {
     return posts.map((post) => {
       return (
         <div key={post.id}>
-          <Link>
+          <Link to={"post/" + post.id}>
             <h2>{post.title}</h2>
           </Link>
           <p>{post.id}</p>
@@ -17,7 +17,7 @@ class PostList extends React.Component {
   }
 
   render() {
-    const {posts} = this.props.posts;
+    const posts = this.props.posts;
     return (
       <div>
         <h1>Post</h1>
