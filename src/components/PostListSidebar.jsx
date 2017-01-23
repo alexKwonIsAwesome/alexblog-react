@@ -24,4 +24,8 @@ class PostListSidebar extends React.Component {
   }
 }
 
+PostListSidebar.propTypes = {
+  posts: React.PropTypes.array
+};
+
 export default PostListSidebar;

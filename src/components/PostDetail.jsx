@@ -11,4 +11,8 @@ class PostDetail extends React.Component {
   }
 }
 
+PostDetail.propTypes = {
+  post: React.PropTypes.object.isRequired
+};
+
 export default PostDetail;

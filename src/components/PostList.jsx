@@ -6,7 +6,7 @@ class PostList extends React.Component {
     return posts.map((post) => {
       return (
         <div key={post.id}>
-          <Link to={"post/" + post.id}>
+          <Link to={"/post/" + post.id}>
             <h2>{post.title}</h2>
           </Link>
           <p>{post.id}</p>
@@ -25,5 +25,9 @@ class PostList extends React.Component {
     );
   }
 }
+
+PostList.propTypes = {
+  posts: React.PropTypes.array
+};
 
 export default PostList;
