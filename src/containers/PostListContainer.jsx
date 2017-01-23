@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import PostList from '../components/PostList';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
     posts: state.posts
   };

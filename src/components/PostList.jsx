@@ -1,11 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class PostList extends React.Component {
   renderPosts(posts) {
     return posts.map((post) => {
       return (
         <div key={post.id}>
-          <h2>{post.title}</h2>
+          <Link>
+            <h2>{post.title}</h2>
+          </Link>
           <p>{post.id}</p>
           <p>{post.content}</p>
         </div>
