@@ -6,7 +6,6 @@ const mapStateToProps = (state, ownProps) => {
   const posts = state.posts;
 
   let post = posts.find(post => post.id === postId);
-  console.log(post);
   return {
     post: post
   };
