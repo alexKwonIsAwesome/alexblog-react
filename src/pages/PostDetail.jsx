@@ -40,10 +40,18 @@ class PostDetail extends React.Component {
       );
   }
 
+  headerType() {
+    if (!this.state.isEditing) {
+      return "post-detail";
+    } else {
+      return "post-form";
+    }
+  }
+
   render() {
     return (
       <div>
-        <HeaderContainer type="post-detail"/>
+        <HeaderContainer type={this.headerType()}/>
         <div className="container-fluid">
           <div className="row">
             <div className="col col-sm-3">
