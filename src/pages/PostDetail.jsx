@@ -1,5 +1,6 @@
 import React from 'react';
 import PostDetailContainer from '../containers/PostDetailContainer';
+import PostFormContainer from '../containers/PostFormContainer';
 import PostListSidebarContainer from '../containers/PostListSidebarContainer';
 import HeaderContainer from '../containers/HeaderContainer';
 
@@ -7,7 +8,7 @@ class PostDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isEditing: false
+      isEditing: false,
     }
 
     this.toggleEdit = this.toggleEdit.bind(this);
@@ -22,6 +23,7 @@ class PostDetail extends React.Component {
   }
 
   toggleEdit() {
+    console.log('toggle edit is workig');
     this.setState({
       isEditing: !this.state.isEditing
     })
@@ -34,10 +36,7 @@ class PostDetail extends React.Component {
       );
     } else
       return(
-        <div>
-          <h1>Edit Form</h1>
-          <button onClick={() => this.toggleEdit()}>Back</button>
-        </div>
+        <PostFormContainer id={this.props.params.id} toggleEdit={() => this.toggleEdit()}/>
       );
   }
 
