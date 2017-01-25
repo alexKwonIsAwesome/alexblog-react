@@ -31,11 +31,11 @@ class PostDetail extends React.Component {
   renderContentOrEditForm() {
     if (!this.state.isEditing) {
       return (
-        <PostDetailContainer id={this.props.params.id} toggleEdit={() => this.toggleEdit()} />
+        <PostDetailContainer id={this.props.params.id} />
       );
     } else
       return(
-        <PostFormContainer id={this.props.params.id} toggleEdit={() => this.toggleEdit()}/>
+        <PostFormContainer id={this.props.params.id} toggleEdit={this.toggleEdit}/>
       );
   }
 
@@ -50,7 +50,7 @@ class PostDetail extends React.Component {
   render() {
     return (
       <div>
-        <HeaderContainer type={this.headerType()}/>
+        <HeaderContainer type={this.headerType()} toggleEdit={this.toggleEdit}/>
         <div className="container-fluid">
           <div className="row">
             <div className="col col-sm-3">

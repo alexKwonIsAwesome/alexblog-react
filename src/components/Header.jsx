@@ -17,7 +17,19 @@ class Header extends React.Component {
       );
     } else if (type === "post-detail") {
       return (
-        <p>post-detail: put edit button</p>
+        <nav className="navbar navbar-light bg-faded">
+          <div>
+            <Link className="navbar navbar-light bg-faded">Alex Blog</Link>
+            <button onClick={this.props.toggleEdit} className="btn btn=secondary navbar-toggler" type="button">
+              Edit
+            </button>
+          </div>
+        </nav>
+
+      );
+    } else if (type === "post-edit") {
+      return (
+        <p>post-edit: </p>
       );
     }
   }
