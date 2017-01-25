@@ -6,7 +6,7 @@ class PostDetail extends React.Component {
       <div>
         <h1>{this.props.post.title}</h1>
         <p>{this.props.post.content}</p>
-        <button onClick={() => this.props.toggleEdit()}>Edit post</button>
+        <button onClick={this.props.toggleEdit}>Edit post</button>
       </div>
     );
   }

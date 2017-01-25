@@ -23,7 +23,6 @@ class PostDetail extends React.Component {
   }
 
   toggleEdit() {
-    console.log('toggle edit is workig');
     this.setState({
       isEditing: !this.state.isEditing
     })

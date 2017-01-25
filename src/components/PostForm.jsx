@@ -7,6 +7,7 @@ class PostForm extends React.Component {
       postTitle: this.props.post.title,
       postContent: this.props.post.content
     }
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   updatePostState() {
@@ -18,10 +19,21 @@ class PostForm extends React.Component {
     });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    const post = {
+      id: this.props.post.id,
+      title: this.refs.postTitle.value,
+      content: this.refs.postContent.value
+    };
+    this.props.actions.updatePostSuccess(post);
+    this.props.toggleEdit();
+  }
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Title</label>
             <input type="text" ref="postTitle" onChange={() => this.updatePostState()} className="form-control" id="InputTitle" value={this.state.postTitle} aria-describedby="postTitle" placeholder="Post Title"/>
@@ -30,8 +42,9 @@ class PostForm extends React.Component {
             <label>Content</label>
             <textarea className="form-control" ref="postContent" onChange={() => this.updatePostState()} id="AreaContent" value={this.state.postContent} placeholder="Post Content" />
           </div>
+          <button type="submit" className="btn btn-primary">Submit</button>
+          <button onClick={this.props.toggleEdit} className="btn btn-secondary" type="button">Cancel</button>
         </form>
-        <button onClick={() => this.props.toggleEdit()}>get back!</button>
       </div>
     );
   }
