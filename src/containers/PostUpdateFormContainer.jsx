@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import PostForm from '../components/PostForm';
+import PostUpdateForm from '../components/PostUpdateForm';
 import * as postActions from '../actions/postActions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,4 +19,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
+export default connect(mapStateToProps, mapDispatchToProps)(PostUpdateForm);

@@ -1,6 +1,6 @@
 import React from 'react';
 import PostDetailContainer from '../containers/PostDetailContainer';
-import PostFormContainer from '../containers/PostFormContainer';
+import PostUpdateFormContainer from '../containers/PostUpdateFormContainer';
 import PostListSidebarContainer from '../containers/PostListSidebarContainer';
 import HeaderContainer from '../containers/HeaderContainer';
 
@@ -35,7 +35,7 @@ class PostDetail extends React.Component {
       );
     } else
       return(
-        <PostFormContainer id={this.props.params.id} toggleEdit={this.toggleEdit}/>
+        <PostUpdateFormContainer id={this.props.params.id} toggleEdit={this.toggleEdit}/>
       );
   }
 
