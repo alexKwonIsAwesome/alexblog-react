@@ -1,12 +1,14 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 
 class PostCreateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      postTitle: this.props.post.title,
-      postContent: this.props.post.content
+      postTitle: "",
+      postContent: ""
     }
+    this.updatePostState = this.updatePostState.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -22,12 +24,12 @@ class PostCreateForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const post = {
-      id: this.props.post.id,
+      id: 3,
       title: this.refs.postTitle.value,
       content: this.refs.postContent.value
     };
-    this.props.actions.updatePostSuccess(post);
-    this.props.toggleEdit();
+    this.props.actions.createPostSuccess(post);
+    browserHistory.push('/');
   }
 
   render() {
@@ -49,9 +51,5 @@ class PostCreateForm extends React.Component {
     );
   }
 }
-
-PostCreateForm.propTypes = {
-  post: React.PropTypes.object
-};
 
 export default PostCreateForm;

@@ -13,7 +13,10 @@ export default function (state = initialState.posts, action) {
         action.post
       ];
     case CREATE_POST_SUCCESS:
-      return state;
+      return [
+        ...state,
+        action.post
+      ];
     case DELETE_POST_SUCCESS:
       return state;
     default:

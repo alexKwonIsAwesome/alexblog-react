@@ -8,7 +8,7 @@ import PostCreate from '../pages/PostCreate';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
-    <Route path="post/:id" component={PostDetail} />
     <Route path="post/create" component={PostCreate} />
+    <Route path="post/:id" component={PostDetail} />
   </Route>
 );

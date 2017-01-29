@@ -9,9 +9,9 @@ class Header extends React.Component {
         <nav className="navbar navbar-light bg-faded">
           <div>
             <Link className="navbar navbar-light bg-faded">Alex Blog</Link>
-            <button className="btn btn=secondary navbar-toggler" type="button">
+            <Link to={"/post/create/"} className="btn btn-secondary navbar-toggler">
               New Post
-            </button>
+            </Link>
           </div>
         </nav>
       );
