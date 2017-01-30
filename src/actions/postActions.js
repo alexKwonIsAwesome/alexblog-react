@@ -1,4 +1,5 @@
 import database from '../firebase';
+import { slugify } from '../utils';
 
 export const FETCH_POSTS_REQUESTED = 'FETCH_POSTS_REQUESTED';
 export const FETCH_POSTS_FULFILLED = 'FETCH_POSTS_FULFILLED';
@@ -73,9 +74,11 @@ export const addPost = (postData) => {
   return dispatch => {
     dispatch(addPostRequestedAction());
     const postsRef = database.ref('/posts');
+    const postSlug = slugify(postData.title);
     postsRef.push({
       title: postData.title,
-      content: postData.content
+      content: postData.content,
+      slug: postSlug
     })
     .then(() => {
       const postId = postsRef.key
