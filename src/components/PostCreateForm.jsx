@@ -23,12 +23,11 @@ class PostCreateForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const post = {
-      id: 3,
+    const postData = {
       title: this.refs.postTitle.value,
-      content: this.refs.postContent.value
+      content: this.refs.postContent.value,
     };
-    this.props.actions.createPostSuccess(post);
+    this.props.actions.addPost(postData);
     browserHistory.push('/');
   }
 

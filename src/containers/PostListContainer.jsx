@@ -1,5 +1,7 @@
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PostList from '../components/PostList';
+import * as postActions from '../actions/postActions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -7,4 +9,10 @@ const mapStateToProps = (state, ownProps) => {
   };
 }
 
-export default connect(mapStateToProps)(PostList);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(postActions, dispatch)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PostList);

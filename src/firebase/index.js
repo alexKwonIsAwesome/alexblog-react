@@ -1,7 +1,20 @@
-export const config = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  databaseURL: process.env.DATABASE_URL,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGING_SENDER_ID
+import firebase from 'firebase';
+
+const API_KEY = "AIzaSyB3LJXLUfX1xDottjkwhIv7nV-zgkbhd3M";
+const AUTH_DOMAIN = "alexblog-react.firebaseapp.com";
+const DATABASE_URL = "https://alexblog-react.firebaseio.com";
+const STORAGE_BUCKET = "alexblog-react.appspot.com";
+const MESSAGING_SENDER_ID = "437972920410";
+
+const config = {
+  apiKey: API_KEY,
+  authDomain: AUTH_DOMAIN,
+  databaseURL: DATABASE_URL,
+  storageBucket: STORAGE_BUCKET,
+  messagingSenderId: MESSAGING_SENDER_ID
 };
+
+firebase.initializeApp(config);
+const database = firebase.database();
+
+export default database; 

@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router';
 
 class PostList extends React.Component {
+  componentDidMount() {
+    this.props.actions.fetchPosts();
+  }
+
   renderPosts(posts) {
     return posts.map((post) => {
       return (
