@@ -8,6 +8,7 @@ class PostUpdateForm extends React.Component {
       postContent: this.props.post.content
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updatePostState = this.updatePostState.bind(this);
   }
 
   updatePostState() {
@@ -23,8 +24,9 @@ class PostUpdateForm extends React.Component {
     e.preventDefault();
     const post = {
       id: this.props.post.id,
-      title: this.refs.postTitle.value,
-      content: this.refs.postContent.value
+      title: this.state.postTitle,
+      content: this.state.postContent,
+      slug: this.props.post.slug
     };
     this.props.actions.updatePostSuccess(post);
     this.props.toggleEdit();

@@ -4,10 +4,10 @@ import PostUpdateForm from '../components/PostUpdateForm';
 import * as postActions from '../actions/postActions';
 
 const mapStateToProps = (state, ownProps) => {
-  const postId = parseInt(ownProps.id, 10);
+  const postSlug = ownProps.slug;
   const posts = state.posts;
 
-  let post = posts.find(post => post.id === postId);
+  let post = posts.find(post => post.slug === postSlug);
   return {
     post: post
   };

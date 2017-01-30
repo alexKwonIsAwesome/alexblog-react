@@ -3,11 +3,13 @@ export default {
     {
       id: 1,
       title: 'sample',
-      content: 'example'
+      content: 'example',
+      slug: 'sample'
     }, {
       id: 2,
       title: 'love you',
-      content: 'what is your name?'
+      content: 'what is your name?',
+      slug: 'love-you'
     }
   ]
 };

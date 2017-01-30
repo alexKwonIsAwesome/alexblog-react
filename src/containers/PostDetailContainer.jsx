@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import PostDetail from '../components/PostDetail';
 
 const mapStateToProps = (state, ownProps) => {
-  const postId = parseInt(ownProps.id, 10);
+  const postSlug = ownProps.slug;
   const posts = state.posts;
 
-  let post = posts.find(post => post.id === postId);
+  let post = posts.find(post => post.slug === postSlug);
   return {
     post: post
   };

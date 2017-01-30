@@ -6,7 +6,7 @@ class PostListSidebar extends React.Component {
     return posts.map((post) => {
       return (
         <li key={post.id}>
-          <Link to={"/post/" + post.id}>
+          <Link to={"/post/" + post.slug}>
             <h2>{post.title}</h2>
           </Link>
         </li>

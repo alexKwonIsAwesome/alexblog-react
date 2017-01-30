@@ -15,9 +15,9 @@ class PostDetail extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.params.id !== nextProps.params.id) {
+    if (this.props.params.slug !== nextProps.params.slug) {
       this.setState({
-      isEditing: false
+        isEditing: false
       })
     }
   }
@@ -31,11 +31,11 @@ class PostDetail extends React.Component {
   renderContentOrEditForm() {
     if (!this.state.isEditing) {
       return (
-        <PostDetailContainer id={this.props.params.id} />
+        <PostDetailContainer slug={this.props.params.slug} />
       );
     } else
       return(
-        <PostUpdateFormContainer id={this.props.params.id} toggleEdit={this.toggleEdit}/>
+        <PostUpdateFormContainer slug={this.props.params.slug} toggleEdit={this.toggleEdit}/>
       );
   }
 

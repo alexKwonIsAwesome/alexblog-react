@@ -10,7 +10,7 @@ class PostList extends React.Component {
     return posts.map((post) => {
       return (
         <div key={post.id}>
-          <Link to={"/post/" + post.id}>
+          <Link to={"/post/" + post.slug}>
             <h2>{post.title}</h2>
           </Link>
           <p>{post.id}</p>
