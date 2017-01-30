@@ -3,6 +3,9 @@ import {
   FETCH_POSTS_REQUESTED,
   FETCH_POSTS_FULFILLED,
   FETCH_POSTS_REJECTED,
+  ADD_POST_REQUESTED,
+  ADD_POST_FULFILLED,
+  ADD_POST_REJECTED,
   UPDATE_POST_SUCCESS,
   CREATE_POST_SUCCESS,
   DELETE_POST_SUCCESS,
@@ -13,8 +16,16 @@ export default function (state = initialState.posts, action) {
     case FETCH_POSTS_REQUESTED:
       return state;
     case FETCH_POSTS_FULFILLED:
-      return state;
+      return [
+        ...action.posts
+      ];
     case FETCH_POSTS_REJECTED:
+      return state;
+    case ADD_POST_REQUESTED:
+      return state;
+    case ADD_POST_FULFILLED:
+      return state;
+    case ADD_POST_REJECTED:
       return state;
     case UPDATE_POST_SUCCESS:
       return [

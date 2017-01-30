@@ -37,9 +37,16 @@ export const fetchPostsRejectedAction = () => {
 export const fetchPosts = () => {
   return dispatch => {
     dispatch(fetchPostsRequestedAction());
-    return database.ref('/').once('value', snap => {
-      const posts = snap.val();
-      dispatch(fetchPostsFulfilledAction(posts))
+    return database.ref('/posts').once('value', snap => {
+      const posts = snap.val() || {};
+      const parsedPosts = [];
+      Object.keys(posts).forEach((postId) => {
+        parsedPosts.push({
+          id: postId,
+          ...posts[postId]
+        });
+      });
+      dispatch(fetchPostsFulfilledAction(parsedPosts))
     })
     .catch((error) => {
       console.log(error);
@@ -82,11 +89,13 @@ export const addPost = (postData) => {
     })
     .then(() => {
       const postId = postsRef.key
-      const postLove = {
-        ...postData,
+      const post = {
+        title: postData.title,
+        content: postData.content,
+        slug: postSlug,
         id: postId
       };
-      dispatch(addPostFulfilledAction(postLove));
+      dispatch(addPostFulfilledAction(post));
     })
     .catch((error) => {
       dispatch(addPostRejectedAction());

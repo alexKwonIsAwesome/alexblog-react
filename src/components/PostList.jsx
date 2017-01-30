@@ -13,7 +13,6 @@ class PostList extends React.Component {
           <Link to={"/post/" + post.slug}>
             <h2>{post.title}</h2>
           </Link>
-          <p>{post.id}</p>
           <p>{post.content}</p>
         </div>
       );
